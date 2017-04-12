@@ -21,7 +21,6 @@ imagesc(I_fft2_scaled);
 % (263,226) (269,226) (269,232) (263,232)
 
 % Get rid of the noise sections from the fourier plot
-% so we can visualize
 I_fft2_scaled(224:236,97:106)=0;
 I_fft2_scaled(194:202,150:157)=0;
 I_fft2_scaled(132:139,253:262)=0;
@@ -29,24 +28,7 @@ I_fft2_scaled(100:110,306:314)=0;
 I_fft2_scaled(133:141,173:179)=0;
 I_fft2_scaled(100:110,142:149)=0;
 I_fft2_scaled(194:202,233:239)=0;
-I_fft2_scaled(226:232,263:269)=0;
+I_fft2_scaled(226:232,2:239)=0;
 
 imagesc(I_fft2_scaled);
-
-% Get rid of the noise section from the shifted
-% complex fourier transform
-
-I_fft2(224:236,97:106)=0;
-I_fft2(194:202,150:157)=0;
-I_fft2(132:139,253:262)=0;
-I_fft2(100:110,306:314)=0;
-I_fft2(133:141,173:179)=0;
-I_fft2(100:110,142:149)=0;
-I_fft2(194:202,233:239)=0;
-I_fft2(226:232,263:269)=0;
-
-% Invert fourier
-I_ifft2 = abs(ifft2(I_fft2));
-imagesc(I_ifft2);
-
 
